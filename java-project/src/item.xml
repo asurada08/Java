@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items>
+    <item id="1" name="레몬">
+        <price>3000</price>
+        <description>레몬에 포함되어 있는 쿠엔산은 피로회복에 좋다.</description>
+    </item>
+    <item id="2" name="키위">
+        <price>3000</price>
+        <description>씨가 식감이 별로다.</description>
+    </item>
+    <item id="3" name="바나나">
+        <price>2000</price>
+        <description>운동할때 많이 먹는다.</description>
+    </item>
+    <item id="4" name="딸기">
+        <price>6000</price>
+        <description>요즘 비싸다.</description>
+    </item>
+    <item id="5" name="유자">
+        <price>2000</price>
+        <description>차 말고는 먹어본적이 없다.</description>
+    </item>
+    <item id="6" name="자몽">
+        <price>3000</price>
+        <description>다이어트 할때 먹는다.</description>
+    </item>
+</items>

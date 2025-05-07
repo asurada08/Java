@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>엘리먼트 형식의 값을 배열 형태로 변환-serializeArray()</title>
+    <style>
+        div{font-weight:bold;color:red;}
+    </style>
+    <script src="js/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#submit").click(function(){
+                $("#result").empty();//내용삭제
+                //json 형식의 문자열로 변환
+                let form_data=$("form").serializeArray();
+                console.log(form_data);
+                $.each(form_data, function(i, value){
+                    $("#result").append(i+"번 "+value.name+"="+value.value+"<br>");
+                })//each
+            });//click
+        });//ready
+    </script>
+</head>
+<body>
+    <form>
+        <input type="hidden" name="seq" value="1">
+        <label>이름을 입력하세요</label>
+        <input type="text" name="username" value=""><br>
+        <label>패스워드를 입력하세요</label>
+        <input type="password" name="password" value=""><br>
+        <input type="checkbox" name="hobby" value="music">music
+        <input type="checkbox" name="hobby" value="yoga">yoga
+        <input type="checkbox" name="hobby" value="reading">reading<br>
+        <input type="button" id="submit" value="전송"><br>
+    </form>
+    <div id="result"></div>
+</body>
+</html>

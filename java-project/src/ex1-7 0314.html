@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POST 방식으로 서버와 통신하기-$.post()</title>
+    <script src="js/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#submit").click(function(){
+                let username = $(".username").val();
+                //서버로 보낼 데이터를 저장 username=제임스
+                let sendData="username"+username;
+                $.post("welcome.jsp",//jsp에 username=제임스 내용 보냄
+                sendData,
+                function(data){//welcome.jsp 내용에 환영합니다 붙여 data에 담아옴
+                    console.log(sendData);
+                    $("#message").html(data);//담아온 내용을 뿌려줌
+                });//post
+            return false;
+            });//click
+        });//ready
+    </script>
+</head>
+<body>
+    <form>
+        <label>이름을 입력하세요 : </label>
+        <input type="text" name="username" class="username"><br>
+        <input type="button" id="submit" value="전송">
+    </form>
+    <div id="message"></div>
+</body>
+</html>
+<!--
+    $.post(URL[, data][,fn][,dataType])
+    POST 방식으로 서버와 통신하는 jQuery Ajax 함수이다. $.post()는 URL로 지정한 파일을 로드해서 그 데이터를 텍스트 형식으로 콜백 함수(fn)에게 넘겨주는 기능을 한다. 
+-->
+<!--
+    http://www.naver.com/search.naver?where=nexearch&sm=top_hty / ?:쿼리스트링
+    param(매개변수값이 한개 일때) : ${}(EL:표현언어), ${param.변수명}
+    paramValue(매개변수값이 여러개 일때) : ${paramValue, 변수명[인덱스]}
+-->

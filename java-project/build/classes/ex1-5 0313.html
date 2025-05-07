@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON 이용하기</title>
+    <style>
+        td{border: 1px solid green;}
+    </style>
+    <script src="js/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.getJSON("item.json",function(data, textStatus){
+                /*$.each(data, function(){
+                    $("#treeData").append("<tr>"+"<td>"
+                        +this.id+"</td>"+"<td>"
+                        +this.name+"</td>"+"<td align='right'>"
+                        +this.price+"</td>"+"<td>"
+                        +this.description+"</td>"+"</tr>");
+                });//each*/
+                $("#treeData").append("<tr><td>id</td><td>name</td><td>price</td><td>description</td></tr>");
+                $.each(data, function(i){
+                    console.log(i+"번");
+                    $("#treeData").append("<tr>"+"<td>"
+                        +this.id+"</td>"+"<td>"
+                        +this.name+"</td>"+"<td align='right'>"
+                        +this.price+"</td>"+"<td>"
+                        +this.description+"</td>"+"</tr>");
+                });//each
+            });//getJSON
+        });//ready
+    </script>
+</head>
+<body>
+    <table id="treeData"></table>
+</body>
+</html>
+<!--
+    $.getJSON(url[, data][, success])
+    JSON으로 표현한 데이터를 파일에 저장해 두었다가 필요할 경우 이를 로드 하는 전역 메소드
+    JSON에 저장되는 정보의 형태
+    배열:대괄호 안에 값을 콤마로 구분하여 나열하며, 
+        대괄호 안에 나오는 순서대로 배열 요소의 순서가 매겨진다.[1, 2, 3]
+    객체:중괄호 안에 있는 이름: 값의 형태로 멤버 하나를 표현, 
+        각 멤버는 콤마로 구분, 
+        순서가 아닌 이름으로 읽기 때문에 멤버의 순서는 의미가 없다. {"name": "레몬" }
+*/
+-->

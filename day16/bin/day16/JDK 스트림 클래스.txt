@@ -1,0 +1,22 @@
+바이트 스트림
+InputStream
+ - FileInputStream
+  - - BufferedInputStream
+  - - DataInputStream
+ - ObjectInputStream
+
+OutputStream
+ - FileOutputStream
+  - - BufferedOutputStream
+  - - DataOutputStream
+ - ObjectOutputStream
+
+문자 스트림
+Reader
+ - InputStreamReader
+ - BufferedReader
+ - FilterReader
+
+Writer
+ - OutputStreamWriter
+ - BufferedWriter

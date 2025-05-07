@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>서버의 데이터를 대상 엘리먼트에 삽입하기-load()</title>
+    <script src="js/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#container").load("resource.html")
+                //.load(url[,data][,success])
+                //url 요청할 주소 data 요청할 때 서버에 보낼 자바스크립트 객체 맵이나 문자열 형식의 데이터
+                //success 요청이 성공했을 때 호출할 콜백 함수
+                //load() 메소드는 완료된 응답을 일치하는 집합에 있는 엘리먼트의 콘텐츠로 삽입
+                //$("#container").load(“resource"); 
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>서버로 부트 데이터 가져오기</button>
+    <div id="container">테이터 가져오기 전</div>
+</body>
+</html>
